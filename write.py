@@ -45,4 +45,5 @@ def write_to_json(results, filename):
     :param filename: A Path-like object pointing to where the data should be saved.
     """
     with open(filename, 'w') as outfile:
-        json.dump([ca.serialize_json() for ca in results], outfile, indent=2)
+        json.dump([ca.serialize_json()
+                  for ca in results], outfile, sort_keys=True, indent=2)

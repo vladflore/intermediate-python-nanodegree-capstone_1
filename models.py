@@ -114,7 +114,7 @@ class CloseApproach:
         self.neo = None
 
     def serialize_csv(self):
-        """Builds a map with the data to be serialized to a csv file."""
+        """Build a map with the data to be serialized to a csv file."""
         return {
             'datetime_utc': datetime_to_str(self.time),
             'distance_au': self.distance,
@@ -126,7 +126,7 @@ class CloseApproach:
         }
 
     def serialize_json(self):
-        """Builds a map with the data to be serialized to a json file."""
+        """Build a map with the data to be serialized to a json file."""
         return {
             'datetime_utc': datetime_to_str(self.time),
             'distance_au': self.distance,

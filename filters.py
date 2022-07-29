@@ -73,51 +73,72 @@ class AttributeFilter:
         raise UnsupportedCriterionError
 
     def __repr__(self):
+        """Return `repr(self)`, a computer-readable string representation of this object."""
         return f"{self.__class__.__name__}(op=operator.{self.op.__name__}, value={self.value})"
 
 
 class DateFilter(AttributeFilter):
+    """A specialized subclass for the date attribute filter."""
+
     def __init__(self, op, value):
+        """Construct a new filter for the date attribute."""
         super().__init__(op, value)
 
     @classmethod
     def get(cls, approach: CloseApproach):
+        """Get the attribute of interest."""
         return approach.time.date()
 
 
 class DistanceFilter(AttributeFilter):
+    """A specialized subclass for the distance attribute filter."""
+
     def __init__(self, op, value):
+        """Construct a new filter for the distance attribute."""
         super().__init__(op, value)
 
     @classmethod
     def get(cls, approach: CloseApproach):
+        """Get the attribute of interest."""
         return approach.distance
 
 
 class VelocityFilter(AttributeFilter):
+    """A specialized subclass for the velocity attribute filter."""
+
     def __init__(self, op, value):
+        """Construct a new filter for the velocity attribute."""
         super().__init__(op, value)
 
     @classmethod
     def get(cls, approach: CloseApproach):
+        """Get the attribute of interest."""
         return approach.velocity
 
 
 class DiameterFilter(AttributeFilter):
+    """A specialized subclass for the diameter attribute filter."""
+
     def __init__(self, op, value):
+        """Construct a new filter for the diameter attribute."""
         super().__init__(op, value)
 
     @classmethod
     def get(cls, approach: CloseApproach):
+        """Get the attribute of interest."""
         return approach.neo.diameter
 
 
 class HazardousFilter(AttributeFilter):
+    """A specialized subclass for the hazardous attribute filter."""
+
     def __init__(self, op, value):
+        """Construct a new filter for the hazardous attribute."""
         super().__init__(op, value)
 
     @classmethod
     def get(cls, approach: CloseApproach):
+        """Get the attribute of interest."""
         return approach.neo.hazardous
 
 
